@@ -9,8 +9,6 @@
 :root {
   --primary-color: rgb(233, 233, 233); /* Light gray */
   --secondary-color: black;
-  --primary-button-color: red;
-  --secondary-button-color: rgb(53, 167, 255);
   --overlay-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
   --default-font: sans-serif;
   --heading-font: 'Montserrat', sans-serif;
@@ -102,7 +100,7 @@ img {
 hr {
     max-width: var(--max-width-hr);
     height: 1px;
-    background-color: white;
+    background-color: #ffffff;
     border: none;
     opacity: 50%;
     display: block;
@@ -135,6 +133,7 @@ li {
     flex-direction: column;
     justify-content: center;
     gap: var(--gap-small);
+    max-width: 85vw;
 }
 
 /* Layout Styles */
@@ -150,18 +149,18 @@ li {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgb(0 0 0 / 28%); */
     z-index: -1;
     background-image: url(assets/backyard-suite-exterior-1.png);
     background-size: cover;
     background-position: center;
-    animation: kenburns-zoom 20s infinite alternate;
-    /* background-blend-mode: darken; */
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: darken;
 }
 
 
 .header-logo {
     width: fit-content;
+    margin-bottom: 8em;
 }
 
 .header-logo img {
@@ -172,13 +171,14 @@ li {
 .header-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
     padding: var(--padding-section);
-    gap: var(--spacing-extra-large) 0;
+    gap: 0;
     min-height: 100vh;
+    padding-top: 10em;
 }
 
 
@@ -204,15 +204,6 @@ nav {
     justify-content: center;
     width: 85vw;
 }
-
-
-.container {
-    max-width: 1920px;
-    width: 98%;
-    margin: 0 auto;
-    /* min-height: 70vh; */
-}
-
 
 article {
     display: flex;
@@ -250,6 +241,14 @@ footer {
     }
 }
 
+a.nav-link {
+    background-color: #ffffff61;
+    padding: var(--padding-btn);
+    /* margin: var(--spacing-small) 0; */
+    width: 85vw;
+    text-align: center;
+}
+
 section.section.hero.index {
    background: white;
 color: black;
@@ -284,7 +283,7 @@ section.section.features {
     height: 100%;
     /* background-color: rgba(0, 0, 0, 0.28); /* 28% dark mask */
     z-index: -1;
-    background-image: url(assets/backyard-suite-exterior-2.png);
+    background-image: url(assets/home/man_woman_laughing.jpg);
     background-size: cover;
     background-position: center;
     /* background-blend-mode: darken; */
@@ -307,7 +306,9 @@ section.section.features {
 }
 
 .testimonials img {
-    max-width: 50px;
+    width: 85%;
+    max-width: 250px;
+    padding-bottom: var(--spacing-medium);
 }
 
 figure.testimonial-border {
@@ -330,19 +331,19 @@ figure.testimonial-border {
   position: relative;
 }
 
-.redefine::before {
+    .redefine::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.28); /* 28% dark mask */
     z-index: -1;
-    background-image: url("assets/backyard-suite-exterior-3.png");
+    background-image: url(assets/happy-couple-in-new-home.jpg);
     background-size: cover;
     background-position: center;
-    /* background-blend-mode: darken; */
+    background-blend-mode: darken;
+    background-color: rgba(0,0,0,0.4);
 }
 
 
@@ -395,7 +396,7 @@ section.section.join-network::before {
     height: 100%;
     /* background-color: rgba(0, 0, 0, 0.28); /* 28% dark mask */
     z-index: -1;
-    background-image: url(assets/atlas-1.jpeg);
+    background-image: url(assets/about/woman_leading_crowd.jpg);
     background-size: cover;
     background-position: center;
     /* background-blend-mode: darken; */
@@ -416,7 +417,7 @@ section.section.join-network::before {
     height: 100%;
     /* background-color: rgba(0, 0, 0, 0.5); /* 50% dark mask */
     z-index: -1;
-    background-image: url(assets/atlas-10.jpeg);
+    background-image: url(assets/about/woman_leading_crowd.jpg);
     background-size: cover;
     background-position: center;
     /* background-blend-mode: darken; */
@@ -436,7 +437,7 @@ section.section.join-network::before {
     height: 100%;
     /* background-color: rgba(0, 0, 0, 0.5); /* 50% dark mask */
     z-index: -1;
-    background-image: url(assets/atlas-11.jpeg);
+    background-image: url(assets/about/woman_leading_crowd.jpg);
     background-size: cover;
     background-position: center;
     /* background-blend-mode: darken; */
@@ -456,7 +457,7 @@ section.section.join-network::before {
     height: 100%;
     /* background-color: rgba(0, 0, 0, 0.1); /* 50% dark mask */
     z-index: -1;
-    background-image: url(assets/atlas-12.jpeg);
+    background-image: url(assets/about/woman_leading_crowd.jpg);
     background-size: cover;
     background-position: center;
     /* background-blend-mode: darken; */
@@ -574,7 +575,7 @@ ul.card-list {
     align-items: center;
 }
 
-hr.hr-short {
+hr.short {
     border: 1px black solid;
     display: block;
     max-width: 300px;
@@ -648,6 +649,28 @@ h2.desktop {
     display: none;
 }
 
+.card .image-content h2.mobile {
+position:absolute;
+top: 50%;
+left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: none;
+}
+
+button.btn {
+    background: red;
+    color: white;
+    width: fit-content;
+    padding: var(--padding-btn);
+    border: none;
+    width: fit-content;
+}
+
+h2.mobile {
+    display: none;
+}
+
 h2.desktop {
     display: block;
     width: fit-content;
@@ -655,7 +678,7 @@ h2.desktop {
 }
 
 section.section.join {
-    background-image: url(assets/atlas-13.jpeg);
+    background-image: url(assets/about/brain.jpg);
     background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -696,28 +719,28 @@ footer .container {
 }
 
 .become-an-expert {
-    background-image: url(assets/atlas-14.jpeg);
+    background-image: url(assets/about/woman_leading_crowd.jpg);
         background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
 
 .enroll {
-    background-image: url(assets/atlas-2.jpeg);
+    background-image: url(assets/about/woman_leading_crowd.jpg);
         background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
 
 .laptop {
-    background-image: url(assets/atlas-3.jpeg);
+    background-image: url(assets/about/woman_leading_crowd.jpg);
         background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
 
 section.section.hero.about-alpha {
-background-image: url(assets/atlas-4.jpeg);
+background-image: url(assets/about/woman_leading_crowd.jpg);
         background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -746,46 +769,36 @@ section.section.dedicated h3 {
 }
 
 .join {
-    background-image: url(assets/atlas-6.jpeg);
+    background-image: url(assets/about/brain.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 91vh;
 }
 
-a.nav-link,
-a.nav-link-join {
-    padding: var(--padding-btn);
-    background-color: #ffffff40;
-    width: 100%;
-    text-align: center;
+.predictable-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-medium);
 }
 
-a.nav-link-join {
-    font-weight: bold;
+.predictable-content img {
+    opacity: 60%;
 }
-
-
-footer p {
-    font-size: xx-small;
-}
-
-/* a.nav-link-join {
-    padding: var(--padding-btn);
-    background-color: #e3161640;
-    width: 100%;
-    text-align: center;
-} */
 
 /* Media Queries */
 @media only screen and (max-width: 425px) {
 
+
+
 }
 
 @media only screen and (min-width: 768px) {
-  .section.index {
-    /* min-height: 75vh; */
-  }
+
 
 .index-content {
     display: flex;
@@ -813,14 +826,18 @@ footer p {
 .header-content {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     align-content: center;
-    justify-content: center;
     align-items: center;
+    padding-top: 10em;
+    gap: 5em;
+    min-height: 100vh;
 }
 
 .header-logo {
     flex: 0;
-    display: none;
+    margin-bottom: 0;
 }
 
 
@@ -828,105 +845,6 @@ footer p {
 }
 
 @media only screen and (min-width: 1024px) {
-  nav {
-    display: flex;
-    align-items: center;
-    padding: 0 0 5px;
-    margin: 0;
-    flex: 0;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    width: 85vw;
-    min-height: auto;
-    padding-bottom: 5px;
-}
-
-.nav-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-content: flex-end;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: max-content;
-    gap: var(--gap-large);
-    margin-bottom: 3px;
-    flex-wrap: wrap;
-}
-
-.header-content {
-    display: flex;
-    flex-direction: row;
-    align-content: flex-end;
-    justify-content: flex-end;
-    align-items: flex-end;
-    min-height: fit-content;
-    max-width: 95%;
-    padding: 0;
-    margin: 0 auto;
-}
-
-.header::before {
-    background: none;
-    display: none;
-}
-
-section.section.hero.index {
-    position: relative;
-    background: none;
-    color: white;
-    padding: 0;
-    margin: 0;
-    min-height: 96vh;
-}
-
-section.section.hero.index::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url(assets/atlas-1.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: darken;
-    background-color: rgba(0,0,0,0.25);
-}
-
-
-a.nav-link,
-a.nav-link-join {
-    background-color: black;
-    padding: 0;
-    margin:0;
-    width: fit-content;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    gap: 0;
-}
-
-a.nav-link-join {
-    background: none;
-    padding: 0;
-    margin: 0;
-    width: fit-content;
-    color: var(--secondary-button-color);
-}
-
-a.nav-link:hover,
-a.nav-link-join:hover {
-text-decoration: underline;
-}
-
-a.nav-link-join:hover {
-    color: var(--primary-color);
-    text-decoration-color: var(--secondary-button-color);
-    
-}
-
   article {
     flex-direction: column;
     gap: var(--gap-medium);
@@ -973,8 +891,151 @@ a.nav-link-join:hover {
     width: 85vw;
     min-height: auto;
     padding-bottom: 5px;
-  }
 }
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: max-content;
+    gap: var(--gap-large);
+    margin-bottom: 3px;
+    flex-wrap: wrap;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 5em;
+    min-height: fit-content;
+    margin: 0 auto;
+    padding: 0;
+    width: 85%;
+}
+
+.header::before {
+    background: none;
+    display: none;
+}
+
+section.section.hero.index {
+    position: relative;
+    background: none;
+    color: white;
+    padding: 0;
+    margin: 0;
+    min-height: 96vh;
+}
+
+section.section.hero.index::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(assets/happy-couple-in-new-home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0,0,0,0.5);
+}
+
+a.nav-link {
+    background-color: transparent;
+    padding: var(--padding-btn);
+    /* margin: var(--spacing-small) 0; */
+    width: fit-content;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+
+
+.index-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-large);
+}
+
+
+.image-content.flip {
+    order: 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-image {
+    max-width: 50%;
+}
+
+.card.flip .card-image {
+    order: 1;
+}
+
+
+
+ul.card-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.features .container {
+    min-height: auto;
+}
+
+.max-width {
+    max-width: 75%;
+}
+
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+    /* min-height: 70vh; */
+}
+
+
+
+.hero-index {
+    height: 95vh;
+}
+
+.card-text {
+    padding: var(--spacing-small);
+}
+
+
+
+
+}
+
+
+
 
 @media only screen and (min-width: 1280px) {
 
