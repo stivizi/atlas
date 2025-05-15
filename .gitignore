@@ -1,1 +1,7 @@
 /directory/
+node_modules/
+dist/
+build/
+.vscode/
+*.log
+*.tmp
